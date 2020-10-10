@@ -1,29 +1,43 @@
 
-//requette API
-let request = new XMLHttpRequest();
-request.onreadystatechange = function() {
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-        let response = JSON.parse(this.responseText);
-        console.log(response[0].imageUrl);
-       	let imgList = [];
-        for (var i = response.length - 1; i >= 0; i--) {
-        	imgList.push(`<img src="${response[i].imageUrl}" width="200">`);
-        	console.log(imgList);
-
-        }
-        document.getElementById("pics").innerHTML = imgList;
-
-    }
-
-let card = {
-	
+function article(){
+    console.log('article');
+    window.location = 'produits.html'
 }
 
-// main.innerHTML+= <h1>{$item.name}</h1>;
-};
-request.open("GET", "http://localhost:3000/api/cameras");
-request.send();
+//requette API avec fetch
+
+const middle = document.getElementById('middle');
+
+fetch("http://localhost:3000/api/cameras")
+    .then(response => {
+        console.log(response);
+        if (response.ok) {
+            return response.json();
+        } else {
+            return Promise.reject(response.status);
+        }
+    })
 
 
-// console.log(document.querySelector('all'));
-showTotalInPanier();
+.then(data => {
+    console.log(data);
+    for (const item of data) {
+        let prix = item.price / 100;
+        console.log(prix)
+        let card =
+            `<div class="card" style="width: 25rem;">
+                 <h5 class="card-title">${item.name}</h5>
+                	  <img src="${item.imageUrl}" class="card-img-top" alt="${item.name}">
+                	  <div class="card-body">
+                    	    <p class="card-text">${item.description}</p>
+                    	    <p class="card-text">${prix} €</p>
+                                <a href="./Frontend/produits.html?id=${item._id}"<button id="article" type="button" class="btn btn-primary" onclick = "article()">Voir l'article</button></a>
+                	  </div>
+             </div>`;
+        middle.innerHTML += card;
+        console.log(item);
+        }
+        const article = document.getElementById('article');
+        console.log(article);
+    })
+    .catch(err => console.log(`Erreur message: ${err}`));
