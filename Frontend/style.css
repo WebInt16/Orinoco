@@ -1,15 +1,19 @@
+*{
+box-sizing:border-box;	
+margin:0;
+padding: 0;
+}
+
+
 body{
 	background-color: #E4EFF3;
 }
-/*.wrapper{
-	width: 1024px;
-	margin: 0 auto;
-	border: 1px solid black;
-}*/
 
-/*.navbar{
-	background-color: #f3e9f1;
-}*/
+h1{
+	font-family: 'Dancing Script', cursive;
+	font-size:2rem;
+	text-align: center;
+}
 main{
 	min-height: 800px;
 }
@@ -18,11 +22,24 @@ main{
     background-image: linear-gradient(#e66465, #9198e5);
     background-image: linear-gradient(#e66465, #9198e5);
 }
+
+/*.nav ul{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.nav li{
+	list-style: inline;
+}
+.navbar a{
+	text-decoration: none;
+	color:black;
+}*/
 footer a, p{
 	text-decoration: none;
 	color: black;
 	font-family: 'Dancing Script', cursive;
-	font-size:1.6rem;
+	font-size:1.8rem;
 }
 .home-logo{
 	border-radius: 5px;
@@ -31,4 +48,7 @@ footer a, p{
 
         -ms-box-shadow: 0 0 21px -8px rgba(0, 0, 0, .5);
          -o-box-shadow: 0 0 21px -8px rgba(0, 0, 0, .5);
+}
+.card{
+	 background-color: #f3eaf3;
 }
