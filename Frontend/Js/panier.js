@@ -9,11 +9,12 @@ function order(){
 let panier = JSON.parse(localStorage.getItem('keyPanier'));
 console.log(panier);
 
+// boucle qui ajoute les differents produits
 for (const item of panier) {
 
-
-    let cartPanier =
-        `  <div class=".table-responsive{-sm|-md|-lg|-xl}">
+// debut du tableau contenant les produits du panier
+let cartPanier = 
+  `<div class=".table-responsive{-sm|-md|-lg|-xl}">
             <table id="tableau" class="table">
               <thead>
                 <tr>
@@ -26,25 +27,30 @@ for (const item of panier) {
                   <th scope="col">Suppression</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td class="name">${item.name}</td>
-                  <td class="description">${item.description}</td>
-                  <td class="lenses">${item.lenses}</td>
-                  <td class="price">€${item.price /100}</td>
-                  <td class="quantity">${item.quantity}</td>
-                  <td><button class="btn btn-danger" type="button">Effacer</button></td>
-                </tr>
-              </tbody>
-            </table>
-           <br><label>Prix du panier total</label> : <label id = "prixTotal"></label>
-              <label id = "nbrLignes" hidden>0</label>
-              <br>
-                <button id="add" type="button" class="btn btn-primary onclick="order()" >Payez</button>
-        </div>`;
-    middle.innerHTML += cartPanier;
+              <tbody>`;
+// boucle qui ajoute les differents produits
+for (const item of panier) {
+    cartPanier += 
+    `<tr>
+      <th scope="row">1</th>
+      <td class="name">${item.name}</td>
+      <td class="description">${item.description}</td>
+      <td class="lenses">${item.lenses}</td>
+      <td class="price">€${item.price / 100}</td>
+      <td class="quantity">${item.quantity}</td>
+      <td><button class="btn btn-danger" type="button">Effacer</button></td>
+    </tr>`;
+}
+// fermeture du tableau et ajout du bouton payer
+cartPanier += `</tbody>
+        </table>
+        <br><label>Prix du panier total</label> : <label id = "prixTotal"></label>
+        <label id = "nbrLignes" hidden>0</label>
+        <br>
+        <button id="add" type="button" class="btn btn-primary onclick="order()" >Payez</button>
+    </div>`;
 
+    middle.innerHTML += cartPanier;
   
 }
 

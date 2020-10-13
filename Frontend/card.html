@@ -8,9 +8,9 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Rancho" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css">
 		<link rel="stylesheet" href="style.css" />
-		<script src="Frontend/index.js"></script>
-		<script src="Frontend/camera.js" asynch></script>
+		
 	</head>
 	<body>
 		<header>
@@ -22,24 +22,19 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="produits.html">Nos Produits</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="panier.html">Panier</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/card.html">Carte</a>
+							<a class="nav-link" href="card.html"><ion-icon name="basket"></ion-icon></a>	
 						</li>
 					</ul>
 				</div>
 			</nav>
-		</header>
-		<main class="container-fluid">
-			
 			<h1>Vos achats</h1>
+		</header>
+		<main id="middle" class="container">
+			
+			
 			
 		</main>
 		<footer>
@@ -62,5 +57,8 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="produits.js" asynch></script>
+	<script src="card.js" async></script>
+	<script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
 </body>
 </html>

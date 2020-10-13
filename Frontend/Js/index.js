@@ -1,4 +1,3 @@
-
 function article(){
     console.log('article');
     window.location = 'produits.html'

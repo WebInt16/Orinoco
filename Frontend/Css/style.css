@@ -13,33 +13,50 @@ h1{
 	font-family: 'Dancing Script', cursive;
 	font-size:2rem;
 	text-align: center;
+	margin:0 auto;
+	padding-top: 20px;
+
 }
+
 main{
+	
 	min-height: 800px;
+	margin:0 auto;
+	padding-top:10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:center;
 }
-.navbar, footer{
+.navbar, footer, .btn-primary{
 	background-color:  background-image: -webkit-gradient(linear, left top, left bottom, from(#e66465), to(#9198e5));
     background-image: linear-gradient(#e66465, #9198e5);
     background-image: linear-gradient(#e66465, #9198e5);
 }
-
-/*.nav ul{
+.navbar-nav ul{
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	align-items: center;
 }
-.nav li{
-	list-style: inline;
+.card{
+	margin: 3rem;
+	background-color: #f3eaf3;
 }
-.navbar a{
-	text-decoration: none;
-	color:black;
-}*/
+.card-title{
+	text-align: center;
+}
+.details{
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
 footer a, p{
 	text-decoration: none;
 	color: black;
 	font-family: 'Dancing Script', cursive;
 	font-size:1.8rem;
+}
+a{
+	color:black;
+	text-decoration:none;
 }
 .home-logo{
 	border-radius: 5px;
@@ -49,6 +66,13 @@ footer a, p{
         -ms-box-shadow: 0 0 21px -8px rgba(0, 0, 0, .5);
          -o-box-shadow: 0 0 21px -8px rgba(0, 0, 0, .5);
 }
-.card{
-	 background-color: #f3eaf3;
+
+table .scope{
+	color:black;
 }
+.dropdown-item a{
+	color: #c6a7dc !important;
+}
+
+
+
