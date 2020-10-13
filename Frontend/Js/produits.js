@@ -6,9 +6,11 @@ function purchase(newProduct) {
     //Envoi produit dans panier
     let camera = new Product(item.lenses, item.name, item.description, item.imageUrl, item.price);
 
+    //selctionner la lentille
     const selectedValue = document.getElementById("select").value;
         console.log(selectedValue)
 
+    //mettre la lentille dans le panier
     let article = {"name": camera.name, "price": camera.price/100, "id": camera._id, "imageUrl": camera.imageUrl,"lenses": selectedValue, "qty": 1};
     let panier = JSON.parse(localStorage.getItem('keyPanier')) || [];
         panier.push(article);
@@ -22,7 +24,10 @@ function purchase(newProduct) {
 // requette API avec fetch
 const params = new URLSearchParams(window.location.search);
 
+//insertion du js dans le html
 const middle = document.getElementById('middle');
+
+let item;
 
 fetch("http://localhost:3000/api/cameras/" + params.get('id'))
     .then(response => {
@@ -65,13 +70,15 @@ fetch("http://localhost:3000/api/cameras/" + params.get('id'))
         select.innerHTML += `<option value='${camera.lenses[i]}' selected='selected' > ${camera.lenses[i]}</option>`
         }
 
+        //cliquer sur bouton pour acheter l'objet
         const buy = document.getElementById('buy');
 
         buy.addEventListener('click', function() {
             purchase(camera);
         })
 
-        console.log(camera);
+        item = camera;
+        console.log(item);
         });
 
 
@@ -91,5 +98,5 @@ class Product {
 }
 
 
-var item = 'camera';
+
 
